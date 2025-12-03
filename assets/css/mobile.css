@@ -476,7 +476,7 @@
     }
 
     .footer-inner-con {
-        grid-template-columns: 39% 14% 14% 23%;
+        grid-template-columns: 39% 14% 14% 30%;
         margin: 0 auto 50px;
     }
 
@@ -1131,7 +1131,7 @@
     }
 
     .footer-inner-con {
-        grid-template-columns: 39% 16.5% 16% 24%;
+        grid-template-columns: 39% 16.5% 16% 28%;
         margin: 0 auto 35px;
     }
 
@@ -2377,7 +2377,7 @@
     }
 
     .header-main-con {
-        top: 15px;
+        top: -10px;
     }
 
     .banner-btns {
@@ -2862,4 +2862,9 @@
         font-size: 37px;
         line-height: 38px;
     }
+}
+
+.navbar-brand img{
+height: auto;
+width: 150px;
 }

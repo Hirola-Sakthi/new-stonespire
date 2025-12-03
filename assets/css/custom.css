@@ -262,7 +262,7 @@ a.white-btn:hover {
 /* header section styling start here */
 .header-main-con {
     position: absolute;
-    top: 35px;
+    top: 15px;
     z-index: 999;
 }
 
@@ -1123,7 +1123,7 @@ a.white-btn:hover {
 /*  */
 .get-started-main-con {
     position: relative;
-    background: url(../images/get-started-bg-img.jpg) no-repeat center center;
+    background: url(../images/get-started-bg-img.png) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -1437,7 +1437,7 @@ a.white-btn:hover {
 .footer-inner-con {
     display: grid;
     gap: 30px;
-    grid-template-columns: 39% 16% 17% 19%;
+    grid-template-columns: 39% 16% 17% 31%;
     margin: 0 auto 73px;
     justify-content: center;
 }
@@ -1722,7 +1722,7 @@ a.white-btn:hover {
 }
 
 .video-con::before {
-    background: url('../images/video-con-bg-img.jpg');
+    background: url('../images/about-video-banner-img.png');
     content: "";
     width: 100%;
     height: 100%;
@@ -2316,4 +2316,168 @@ a.white-btn:hover {
 
 .owl-carousel .owl-item a img {
     width: auto;
+}
+
+
+
+/*portfolio styles*/
+  .portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 20px;
+}
+
+.portfolio-gallery img {
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+@media(max-width:530px){
+	.portfolio-gallery img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+}
+
+.portfolio-gallery img:hover {
+    transform: scale(1.05);
+}
+
+ .popup-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.9);
+    z-index: 100; 
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-image span{
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    z-index: 110;
+  }
+
+  .popup-image img{
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    /* border: 2px solid #fff; */
+    border-radius: 5px;
+    width: 50%;
+    max-width: 750px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+	margin-top: 50px;
+  }
+
+  @media(max-width:530px){
+	.popup-image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 750px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+	margin-top: 50px;
+  }
+  }
+
+  .popup-image .prev,
+  .popup-image .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 110;
+  }
+
+  @media(max-width:530px){
+  .popup-image .prev,
+  .popup-image .next {
+    position: absolute;
+    top: 80%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 110;
+  }
+  }
+
+  .popup-image .prev:hover,
+  .popup-image .next:hover {
+    color: #f1c40f;
+  }
+
+  .popup-image .prev { left: 40px; }
+  .popup-image .next { right: 40px; }
+
+.show-more {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.show-more-btn {
+ background: var(--light-green-color);
+ color: var(--primary-color);
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.show-more-btn:hover {
+  color: var(--primary-color);
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-title{
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 30px;
+}
+.portfolio-title h2{
+  color: black;
+  font-size: 32px;
+  font-weight: 600;
 }
