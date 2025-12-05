@@ -48,7 +48,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link p-0 active" href="index.html">Home</a>
+                            <a class="nav-link p-0" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link p-0" href="about.html">About</a>
@@ -61,6 +61,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link p-0" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-0" href="testimonial.html">Testimonial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-0" href="faq.html">FAQ</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdown4" role="button"
@@ -84,14 +90,14 @@
                             </div>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link p-0" href="contact.html">Contact us</a>
+                            <a class="nav-link p-0 active" href="contact.html">Contact us</a>
                         </li>
                     </ul>
                 </div>
                 <div class="nav-btns d-flex align-items-center">
                     <div class="contact-btn">
                         <figure class="mb-0">
-                            <img src="assets/images/phone-img.png" alt="phone-img">
+                            <img src="assets/images/phone-img.png" alt="phone-img" height="35px" ; width="35px">
                         </figure>
                         <a href="tel:+91 8296756787">
                             +91 8296756787
@@ -134,11 +140,11 @@
 
     <!-- CONTACT HELP SECTION -->
     <section
-        class="float-left w-100 position-relative contact-help-con padding-top padding-bottom main-box text-center background-navy-medium">
+        class="float-left w-100 position-relative contact-help-con padding-up padding-down main-box text-center background-navy-medium">
         <div class="container wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
             <div class="generic-title text-center">
                 <span class="d-block wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.4s">Contact Info</span>
-                <h2 class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s">Our Contact Information</h2>
+                <h3 class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s">Our Contact Information</h3>
             </div>
             <div class="row align-items-center wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.6s">
                 <div class="col-lg-4 col-md-4 d-flex">
@@ -189,11 +195,11 @@
         <!-- why choose us con  -->
     </section>
     <!-- CONTACT FORM SECTION-->
-    <section class="float-left w-100 position-relative contact-form-con padding-top padding-bottom main-box light-bg">
+    <section class="float-left w-100 position-relative contact-form-con padding-up padding-down main-box light-bg">
         <div class="container wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s">
             <div class="generic-title text-center">
                 <span class="d-block wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.4s">Get in Touch</span>
-                <h2 class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s">Send us a Message</h2>
+                <h3 class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s">Send us a Message</h3>
             </div>
             <div class="row wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.6s">
                 <div class="col-xl-12 col-lg-12 mr-auto ml-auto">
@@ -240,7 +246,7 @@
     <div class="clearfix"></div>
 
     <!-- SUBSCRIPTION SECTION START HERE -->
-    <section class="subscription-main-con w-100 float-left padding-top padding-bottom position-relative main-box">
+    <section class="subscription-main-con w-100 float-left padding-up padding-down position-relative main-box">
         <div class="wrapper1417 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
             <div class="subscription-inner-con">
                 <div class="subscription-img-con1 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.4s">
@@ -258,11 +264,13 @@
                         <h3 class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.5s">Stay Updated with
                             Stonespire Architects</h3>
                     </div>
-                    <div class="subscription-mail-box wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.6s">
-                        <input type="email" id="mail" placeholder="Enter Your Email Address:">
-                        <button><i class="fas fa-paper-plane"></i></button>
+                    <div class="touch-btn-wrapper">
+                        <a href="contact.html" class="touch-link">
+                            <button class="touch-btn">
+                                Get in Touch <i class="fas fa-paper-plane touch-btn-icon"></i>
+                            </button>
+                        </a>
                     </div>
-                </div>
                 <div class="subscription-img-con2 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.4s">
                     <figure class="text-right">
                         <img src="assets/images/footer-small-img-2.png" alt="subscription-small-img2">
@@ -278,6 +286,20 @@
     <!-- FOOTER SECTION START HERE -->
     <section class="footer-main-con w-100 float-left position-relative main-box">
         <div class="container">
+            <div>
+                <a href="tel:+918296756787">
+                    <button class="btn-floating phone">
+                        <img src="assets/images/call-icon.png" width="30" height="30" alt="Phone" />
+                        <span>Call us</span>
+                    </button>
+                </a>
+                <a href="https://wa.me/+918296756787" target="_blank">
+                    <button class="btn-floating whatsapp">
+                        <img src="assets/images/whatsapp-icon.png" width="30" height="30" alt="WhatsApp" />
+                        <span>Chat</span>
+                    </button>
+                </a>
+            </div>
             <div class="footer-inner-con">
                 <div class="footer-box footer-logo-con">
                     <figure>
@@ -286,15 +308,34 @@
                     <p>Stonespire Architects – Interior and architectural design, creating spaces that inspire.</p>
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/stonespirearchitectsofficial/" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/accounts/login/?hl=en"><i
+                            <a href="https://www.instagram.com/stonespire_architects/" target="_blank"><i
                                     class="fab fa-instagram"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                            <a href="https://x.com/stonespirearc" target="_blank">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
                         </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/stonespire-architects/" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                      <li>
+                            <a href="https://www.youtube.com/@StonespireArchitectsofficial" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://in.pinterest.com/stonepsirearchitects/stonespire-architects/" target="_blank">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
                 <div class="footer-box">
@@ -330,7 +371,7 @@
                             <a href="team.html">Team</a>
                         </li>
                         <li>
-                            <a href="blog.html">News</a>
+                            <a href="blog.html">Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -341,7 +382,8 @@
                         <li><a href="mailto:queries@stonespire.in"><i class="fas fa-envelope"></i>
                                 queries@stonespire.in</a>
                         </li>
-                        <li><a href="https://maps.app.goo.gl/C288MmZTQDghyudZ7"><i class="fas fa-map-marker-alt"></i>
+                        <li><a href="https://www.google.com/maps?q=9,4th Floor, 2nd Cross, Dasarahalli, Amruthahalli Main Rd, Bhuvaneswari Nagar, Virupakshapura, Bengaluru, Karnataka 560024"
+                                target="_blank" rel="noopener noreferrer"></i>
                                 9, 4th Floor, 2nd Cross, Dasarahalli, Amruthahalli Main Rd,
                                 Bhuvaneswari Nagar, Virupakshapura, Bengaluru, Karnataka 560024</a></li>
                     </ul>

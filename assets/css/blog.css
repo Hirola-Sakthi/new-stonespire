@@ -1538,7 +1538,8 @@ a.item-link {
 .pagination .page-item:not(.disabled):hover>.page-link,
 .pagination .page-item:not(.disabled)>.page-link,
 #blog .post-item.border .post-item-wrap .post-item-description a {
-	color: var(--light-green-color);
+	/* color: var(--light-green-color); */
+	color: #000;
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: 500;
@@ -1697,7 +1698,8 @@ a.item-link {
 .pagination .page-item:not(.disabled):active>.page-link,
 .pagination .page-item:not(.disabled):focus>.page-link,
 .pagination .page-item:not(.disabled):hover>.page-link {
-	background-color: var(--light-green-color);
+	/* background-color: var(--light-green-color); */
+	background-color: #000;
 	border-color: #e4e4e4;
 	box-shadow: none;
 	color: var(--primary-color);
