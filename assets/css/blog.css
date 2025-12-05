@@ -46,10 +46,11 @@ h4 {
 }
 
 .single-blog-box:hover h4 a {
-	color: var(--light-green-color);
+	/* color: var(--light-green-color); */
+	color: #000;
 }
 
-.single-blog-outer-con {
+#blogList {
 	display: grid;
 	gap: 50px 30px;
 	margin-bottom: 70px;
@@ -184,7 +185,8 @@ h4 {
 
 .single-blog-box h4 a:hover {
 	text-decoration: none;
-	color: var(--light-green-color);
+	/* color: var(--light-green-color); */
+	color: #000;
 }
 
 .generic-btn2 a::before {
@@ -1770,7 +1772,11 @@ a.item-link {
 .blogpage-section .blog-box .post-item-wrap .infinite-blog,
 .blogpage-section .fourcolumn-blog .post-item-wrap .lower-portion,
 .blog-tabs-section .blog-tabs-inner-section .single-blog-outer-con .single-blog-box,
+.blog-tabs-section .blog-tabs-inner-section .single-blog-outer-con #blogList .single-blog-box,
+
 .blog-tabs-section .blog-tabs-inner-section .single-blog-outer-con .single-blog-details,
+.blog-tabs-section .blog-tabs-inner-section .single-blog-outer-con #blogList .single-blog-details,
+
 .blogpage-section .blog-box .lower-portion {
 	display: flex;
 	flex-direction: column;
@@ -2412,7 +2418,7 @@ a.item-link {
 
 	h3 {
 		font-size: 30px;
-		line-height: 24px;
+		line-height: 35px;
 	}
 
 	h4 {
@@ -2514,7 +2520,8 @@ a.item-link {
 		line-height: 20px;
 	}
 
-	.single-blog-outer-con {
+	.single-blog-outer-con,
+	#blogList {
 		gap: 40px 30px;
 	}
 }
@@ -2853,7 +2860,8 @@ a.item-link {
 		gap: 4px;
 	}
 
-	.single-blog-outer-con {
+	.single-blog-outer-con,
+	#blogList {
 		gap: 25px 25px;
 		margin-bottom: 40px;
 		grid-template-columns: 48% 48%;
@@ -2908,8 +2916,8 @@ a.item-link {
 	}
 
 	h3 {
-		font-size: 20px;
-		line-height: 24px;
+		font-size: 32px;
+		line-height: 35px;
 	}
 
 	h2 {
@@ -3311,7 +3319,8 @@ a.item-link {
 		grid-template-columns: 29% 33% 36%;
 	}
 
-	.single-blog-outer-con {
+	.single-blog-outer-con,
+	#blogList {
 		gap: 20px 20px;
 		margin-bottom: 30px;
 		grid-template-columns: 100%;
@@ -3727,7 +3736,8 @@ a.item-link {
 		margin-bottom: 12px;
 	}
 
-	.single-blog-outer-con {
+	.single-blog-outer-con,
+	#blogList {
 		gap: 15px;
 	}
 
@@ -3783,7 +3793,7 @@ a.item-link {
 	}
 
 	h3 {
-		font-size: 18px;
+		font-size: 25px;
 		line-height: 24px;
 	}
 
@@ -3960,4 +3970,14 @@ a.item-link {
 		width: 100%;
 		margin: 0 auto;
 	}
+}
+
+.internal-link {
+	color: #4c4cf3;
+	text-decoration: underline;
+}
+
+.internal-link:hover {
+	color: #4c4cf3;
+	text-decoration: none;
 }

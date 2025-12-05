@@ -10,7 +10,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <title> Blog | Stonespire</title>
+    <title>Blogs | About Construction, Architecture, Interior Designs</title>
+    <meta name="description" content="Explore insightful articles on construction, architecture, and interior designs. Get inspired and stay updated with the latest trends in the industry.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css" type="text/css">
@@ -146,7 +147,7 @@
                 <div class="tab-content wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.5s" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="single-blog-outer-con">
-                            <div class="single-blog-box">
+                            <!-- <div class="single-blog-box">
                                 <figure class="mb-0">
                                     <img src="assets/images/single-blog-tab-img1.jpg" alt="single-blog-tab-img1"
                                         loading="lazy" class="client-img-fluid">
@@ -161,67 +162,12 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem
                                         ipsum dolor sit amet, consectetur</p>
                                     <div class="primary-button d-inline-block">
-                                        <a href="#" class="d-inline-block ">Read More</a>
+                                        <a href="architectural-mistakes-to-avoid-while-building-in-bangalore.html" class="d-inline-block ">Read More</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="single-blog-box">
-                                <figure class="mb-0">
-                                    <img src="assets/images/single-blog-tab-img2.jpg" alt="single-blog-tab-img2"
-                                        loading="lazy" class="client-img-fluid">
-                                </figure>
-                                <div class="single-blog-details">
-                                    <ul class="list-unstyled">
-                                        <li class="position-relative"><i class="fas fa-user"></i> Posted by Admin</li>
-                                        <li class="position-relative"><i class="fas fa-calendar-alt"></i> October 30,
-                                            2022</li>
-                                    </ul>
-                                    <h4><a href="#">How’s the Economy?</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem
-                                        ipsum dolor sit amet, consectetur</p>
-                                    <div class="primary-button d-inline-block">
-                                        <a href="#" class="d-inline-block ">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-blog-box">
-                                <figure class="mb-0">
-                                    <img src="assets/images/single-blog-tab-img3.jpg" alt="single-blog-tab-img3"
-                                        loading="lazy" class="client-img-fluid">
-                                </figure>
-                                <div class="single-blog-details">
-                                    <ul class="list-unstyled">
-                                        <li class="position-relative"><i class="fas fa-user"></i> Posted by Admin</li>
-                                        <li class="position-relative"><i class="fas fa-calendar-alt"></i> October 30,
-                                            2022</li>
-                                    </ul>
-                                    <h4><a href="#">Our strength, Your Business</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem
-                                        ipsum dolor sit amet, consectetur</p>
-                                    <div class="primary-button d-inline-block">
-                                        <a href="#" class="d-inline-block ">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-blog-box">
-                                <figure class="mb-0">
-                                    <img src="assets/images/single-blog-tab-img4.jpg" alt="single-blog-tab-img4"
-                                        loading="lazy" class="client-img-fluid">
-                                </figure>
-                                <div class="single-blog-details">
-                                    <ul class="list-unstyled">
-                                        <li class="position-relative"><i class="fas fa-user"></i> Posted by Admin</li>
-                                        <li class="position-relative"><i class="fas fa-calendar-alt"></i> October 30,
-                                            2022</li>
-                                    </ul>
-                                    <h4><a href="#">How’s the Economy?</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem
-                                        ipsum dolor sit amet, consectetur</p>
-                                    <div class="primary-button d-inline-block">
-                                        <a href="#" class="d-inline-block ">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+                            </div> -->
+                        
+                        <div id="blogList"></div>
 
                         </div>
 
@@ -360,6 +306,44 @@
             </div>
         </div>
     </section>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("./assets/json/blogs_data.json")
+            .then(response => response.json())
+            .then(blogs => {
+                  blogs = blogs.reverse();
+                const blogList = document.getElementById("blogList");
+                blogList.innerHTML = blogs.map(blog => {
+                    return `
+                            <div class="single-blog-box">
+                                <figure class="mb-0">
+                                    <img src="${blog.image_path}" 
+                                         alt="${blog.title}" 
+                                         loading="lazy" 
+                                         class="blog-img-fluid">
+                                </figure>
+                                <div class="single-blog-details">
+                                    <ul class="list-unstyled">
+                                        <li class="position-relative"><i class="fas fa-user"></i> Posted by Admin</li>
+                                        <li class="position-relative">
+                                            <i class="fas fa-calendar-alt"></i> 
+                                            ${blog.generated_at.split(" ")[0]}
+                                        </li>
+                                    </ul>
+                                    <h4><a href="${blog.html_file}">${blog.title}</a></h4>
+                                    <p>${blog.excerpt.substring(0, 150)}...</p>
+                                    <div class="primary-button d-inline-block">
+                                        <a href="blog/${blog.html_file}" class="d-inline-block">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                    `;
+                }).join("");
+            })
+            .catch(error => console.error("Error loading blogs:", error));
+    });
+</script>
+
     <!-- FOOTER SECTION END HERE -->
     <!-- BACK TO TOP BUTTON -->
     <button id="back-to-top-btn" title="Back to Top"></button>
