@@ -3154,3 +3154,10 @@ height: auto;
     max-height: 200px;
   }
 }
+
+.copyright-link{
+  color: #fff;
+}
+.copyright-link:hover{
+  color: #fff;
+}
