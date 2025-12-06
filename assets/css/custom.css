@@ -92,8 +92,8 @@ figure {
 
 /* generics start */
 h1 {
-  font-size: 130px;
-  line-height: 135px;
+  font-size: 110px;
+  line-height: 120px;
   font-weight: 500;
   color: var(--secondary-color);
   font-family: "Josefin Sans", sans-serif;
@@ -619,7 +619,7 @@ a.white-btn:hover {
 
 .banner-text-con p {
   font-size: 24px;
-  line-height: 37px;
+  line-height: 32px;
   margin-bottom: 32px;
   color: var(--black-family-color);
 }
@@ -3163,3 +3163,106 @@ height: auto;
 .copyright-link:hover{
   color: #fff;
 }
+
+/*vission & mission styles*/
+.main-section-title {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.main-section-title::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+
+.info-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.section-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .main-section-title {
+        font-size: 28px;
+    }
+    .info-box {
+        padding: 20px;
+    }
+}
+
+/*about center section styles*/
+.center-content-section {
+    width: 100%;
+    padding-top:50px ;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+}
+
+.center-content-section .content-wrapper {
+    max-width: 750px; 
+    width: 100%;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-desc {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-desc {
+        font-size: 15px;
+    }
+}
+
