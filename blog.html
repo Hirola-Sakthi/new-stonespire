@@ -117,8 +117,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="abt-desgin-content">
                         <h1 class="sub-banner-heading">Blog</h1>
-                        <p>We blend innovative architecture with refined interior <br>
-                            design to create spaces that inspire. </p>
+                        <p>Discover ideas in architecture and interior design that<br> turn spaces into places of inspiration and beauty.</p>
                         <div class="breadcrumb-con d-inline-block">
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -129,7 +128,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <figure>
-                        <img src="assets/images/about-baner-img.jpg" alt="image" class="client-img-fluid">
+                        <img src="assets/images/blog-banner-img.png" alt="image" class="client-img-fluid">
                     </figure>
                 </div>
                 <!-- sub banner inner con -->
@@ -172,7 +171,7 @@
                         </div>
 
                     </div>
-                    <nav aria-label="...">
+                    <!-- <nav aria-label="...">
                         <ul class="pagination">
                             <li class="page-item disabled">
                                 <a class="page-link" href="#" tabindex="-1"><i
@@ -186,6 +185,9 @@
                                 <a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
                             </li>
                         </ul>
+                    </nav> -->
+                    <nav aria-label="...">
+                    <ul class="pagination" id="pagination"></ul>
                     </nav>
                 </div>
             </div>
@@ -292,8 +294,8 @@
                         <li><a href="mailto:queries@stonespire.in"><i class="fas fa-envelope"></i>
                                 queries@stonespire.in</a>
                         </li>
-                        <li><a href="https://www.google.com/maps?q=9,4th Floor, 2nd Cross, Dasarahalli, Amruthahalli Main Rd, Bhuvaneswari Nagar, Virupakshapura, Bengaluru, Karnataka 560024"
-                                target="_blank" rel="noopener noreferrer"></i>
+                                                <li><a href="https://www.google.com/maps?q=9,4th Floor, 2nd Cross, Dasarahalli, Amruthahalli Main Rd, Bhuvaneswari Nagar, Virupakshapura, Bengaluru, Karnataka 560024"
+                                target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i>
                                 9, 4th Floor, 2nd Cross, Dasarahalli, Amruthahalli Main Rd,
                                 Bhuvaneswari Nagar, Virupakshapura, Bengaluru, Karnataka 560024</a></li>
                     </ul>
@@ -311,7 +313,7 @@
             </div>
         </div>
     </section>
-    <script>
+    <!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         fetch("./assets/json/blogs_data.json")
             .then(response => response.json())
@@ -347,7 +349,109 @@
             })
             .catch(error => console.error("Error loading blogs:", error));
     });
+</script> -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const blogsPerPage = 6; // how many blogs per page
+    let blogsData = [];
+    let currentPage = 1;
+
+    // Load JSON
+    fetch("./assets/json/blogs_data.json")
+        .then(response => response.json())
+        .then(blogs => {
+            blogsData = blogs.reverse();
+            renderPage(currentPage);
+            renderPagination();
+        });
+
+    // Render blogs for selected page
+    function renderPage(page) {
+        const blogList = document.getElementById("blogList");
+        const start = (page - 1) * blogsPerPage;
+        const end = start + blogsPerPage;
+        const pageBlogs = blogsData.slice(start, end);
+
+        blogList.innerHTML = pageBlogs.map(blog => {
+            return `
+                <div class="single-blog-box">
+                    <figure class="mb-0">
+                        <img src="${blog.image_path}" 
+                             alt="${blog.title}" 
+                             loading="lazy" 
+                             class="blog-img-fluid">
+                    </figure>
+                    <div class="single-blog-details">
+                        <ul class="list-unstyled">
+                            <li class="position-relative"><i class="fas fa-user"></i> Posted by Admin</li>
+                            <li class="position-relative">
+                                <i class="fas fa-calendar-alt"></i> 
+                                ${blog.generated_at.split(" ")[0]}
+                            </li>
+                        </ul>
+                        <h4><a href="${blog.html_file}">${blog.title}</a></h4>
+                        <p>${blog.excerpt.substring(0, 150)}...</p>
+                        <div class="primary-button d-inline-block">
+                            <a href="blog/${blog.html_file}" class="d-inline-block">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+
+    // Render pagination buttons
+    function renderPagination() {
+        const totalPages = Math.ceil(blogsData.length / blogsPerPage);
+        const pagination = document.getElementById("pagination");
+        let html = "";
+
+        // Previous button
+        html += `
+            <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
+                <a class="page-link" href="#" data-page="${currentPage - 1}">
+                    <i class="fas fa-angle-left"></i>
+                </a>
+            </li>
+        `;
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            html += `
+                <li class="page-item ${i === currentPage ? "active" : ""}">
+                    <a class="page-link" href="#" data-page="${i}">${i}</a>
+                </li>
+            `;
+        }
+
+        // Next button
+        html += `
+            <li class="page-item ${currentPage === totalPages ? "disabled" : ""}">
+                <a class="page-link" href="#" data-page="${currentPage + 1}">
+                    <i class="fas fa-angle-right"></i>
+                </a>
+            </li>
+        `;
+
+        pagination.innerHTML = html;
+
+        // Add click events
+        document.querySelectorAll("#pagination a").forEach(a => {
+            a.addEventListener("click", function (e) {
+                e.preventDefault();
+                const page = Number(this.dataset.page);
+                if (page >= 1 && page <= totalPages) {
+                    currentPage = page;
+                    renderPage(page);
+                    renderPagination();
+                    // window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            });
+        });
+    }
+});
 </script>
+
 
     <!-- FOOTER SECTION END HERE -->
     <!-- BACK TO TOP BUTTON -->

@@ -92,8 +92,8 @@ figure {
 
 /* generics start */
 h1 {
-  font-size: 170px;
-  line-height: 157px;
+  font-size: 130px;
+  line-height: 135px;
   font-weight: 500;
   color: var(--secondary-color);
   font-family: "Josefin Sans", sans-serif;
@@ -169,7 +169,7 @@ a.secondary-btn,
 a.white-btn,
 .primary-button a {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 30px;
   font-weight: 600;
   height: 60px;
   border-radius: 30px;
@@ -210,8 +210,8 @@ a.secondary-btn,
   /* background: var(--accent);
     color: var(--primary-color); */
   /* border-color: var(--accent); */
-  background: #fff;
-  color: #000;
+  background: #000;
+  color: #fff;
 }
 
 a.secondary-btn:hover,
@@ -233,8 +233,8 @@ a.secondary-btn:hover,
   /* background: var(--primary-color);
     border-color: var(--accent);
     color: var(--accent); */
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
 }
 
 a.white-btn {
@@ -2035,7 +2035,8 @@ a.white-btn:hover {
 }
 
 .breadcrumb-item a:hover {
-  color: var(--accent);
+  /* color: var(--accent); */
+  color: #000;
 }
 
 /* .breadcrumb:hover .breadcrumb-item a,
@@ -2184,7 +2185,8 @@ a.white-btn:hover {
 }
 
 .contact-help-con .white-box ul li a:hover {
-  color: var(--light-green-color);
+  /* color: var(--light-green-color); */
+  color: #000;
   text-decoration: none;
 }
 
@@ -2277,8 +2279,8 @@ a.white-btn:hover {
 
 .secondary-btn button:hover {
   /* background: var(--light-green-color); */
-  background: #000;
-  color: var(--primary-color);
+  background: #fff;
+  color: #000;
   /* border-color: var(--light-green-color); */
 }
 
@@ -2286,10 +2288,10 @@ a.white-btn:hover {
 .contact-map-con iframe {
   height: 546px;
   width: 100%;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
+  filter: none;
+  -webkit-filter:none;
   margin-bottom: -8px;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .contact-map-con iframe:hover {
