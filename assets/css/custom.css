@@ -1031,6 +1031,14 @@ a.white-btn:hover {
   justify-content: center;
   align-items: center;
 }
+@media(max-width:540px){
+  .owl-dots {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  align-items: center;
+}
+}
 
 .latest-proj-inner-con .owl-carousel button.owl-dot {
   width: 13px;
@@ -2838,6 +2846,16 @@ a.white-btn:hover {
   padding-bottom: 65px;
 }
 
+@media(max-width:768px){
+  .padding-up {
+  padding-top: 30px;
+}
+
+.padding-down {
+  padding-bottom: 30px;
+}
+}
+
 .gallery-section {
   padding: 60px 20px;
   background-color: #f5f5f5;
@@ -3229,7 +3247,7 @@ height: auto;
 }
 
 .center-content-section .content-wrapper {
-    max-width: 750px; 
+    max-width: 980px; 
     width: 100%;
 }
 
