@@ -2779,7 +2779,7 @@
   }
 
   .footer-box {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     width: 102px;
   }
 
@@ -2788,7 +2788,7 @@
   }
 
   .footer-box h6 {
-    text-align: center;
+    text-align: start;
   }
 
   .footer-box ul li {
